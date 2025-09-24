@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kings&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kings&family=Marck+Script&family=Tangerine:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+
+        body {
+        background-color: rgb(210, 255, 255);
+        font: italic 600 1em 'Work Sans', sans-serif;
+        text-align: center;
+    }
+
+    .copy {
+        text-decoration: underline;
+        text-shadow: 1px 1px 1px rgb(150, 150, 150);
+        font: italic 600 1em 'Work Sans', sans-serif;
+    }
+
+    h1 {
+        text-shadow: 2px 2px 1px rgb(150, 150, 150); 
+        text-decoration: underline;
+    }
+
+    h2 {
+        text-shadow: 2px 2px 1px rgb(150, 150, 150); 
+        text-decoration: underline;
+        font-family: "Kings", cursive;
+        font-weight: 700;
+        font-style: normal;
+            
+    }
+
+    h3 {
+            text-shadow: 2px 2px 1px rgba(150, 150, 150, 0.349); 
+            text-decoration: underline;
+            font-family: "UnifrakturCook", cursive;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+    p {
+        font-family: "Marck Script", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.2em;
+     }
+
+    a {
+        color: rgb(0, 110, 77);
+        text-decoration: none;
+        font-weight: bold;
+        font: italic 600 1em 'Work Sans', sans-serif;
+    }
+        
+    a:visited { 
+        color: rgb(0, 0, 172);
+     }
+
+    a:hover {
+        color: rgb(0, 166, 243);
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: rgb(140, 0, 255);
+    }
+
+    a::after {
+        content: ' [link]';
+        text-decoration: none;
+        font-weight: normal;
+        color: rgb(153, 153, 153);
+    } 
+
+    .ver {
+        color: rgb(240, 50, 50);
+        text-decoration: underline;
+        font-weight: bold;
+    }
