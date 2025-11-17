@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 578px) and (max-width: 768px) {
+    header {
+        background-color: rgb(141, 141, 141);
+    }
+
+    header > h1 {
+        padding: 10px;
+        text-align: center;
+    }
+
+    #burger {
+        background-color: rgb(39, 39, 39);
+        color: white;
+        display: block;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    #burger:hover {
+        background-color: white;
+        color: black;
+    }
+
+    menu {
+        display: none;
+    }
+
+    span {
+        display: block;
+    }
+
+    p > a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        text-align: center;
+        background-color: rgb(85, 85, 85);
+        color: white;
+        border-top: 2px solid gray;
+    }
+
+    p > a:hover {
+        background-color: gray;
+    }
+
+}
