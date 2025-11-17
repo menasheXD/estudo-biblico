@@ -101,7 +101,6 @@
         }
 
         a::after {
-            content: ' [link]';
             text-decoration: none;
             font-weight: normal;
             color: rgb(153, 153, 153);
@@ -110,7 +109,6 @@
         iframe#tela {
             width: 95vw;
             height: 400px;
-            border: 2px solid black;
         }
 
     </style>
@@ -124,9 +122,10 @@
     <p><a href="index01.html">Voltar para a página anterior.</a></p>
     <p class="copy">&copy;IrmãosemCristo</p>
 
-    <iframe id="tela" name="frame" srcdoc="<h1>Escolha uma das opções acima</h1>">
+    <iframe id="tela" name="frame" frameborder="0" srcdoc="<h1>Escolha uma das opções acima</h1>">
         <p>Infelizmente seu navegador não é compatível com isso.</p>
     </iframe>
+
 
 </body>
 </html>
