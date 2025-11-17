@@ -37,7 +37,7 @@
         display: block;
     }
 
-    p > a {
+    li > a {
         display: block;
         padding: 10px;
         text-decoration: none;
@@ -47,7 +47,7 @@
         border-top: 2px solid gray;
     }
 
-    p > a:hover {
+    li > a:hover {
         background-color: gray;
     }
 

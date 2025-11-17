@@ -176,17 +176,36 @@
         }
 
         #burger {
-            display: none;
-        }
+        background-color: rgb(39, 39, 39);
+        color: white;
+        display: block;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    #burger:hover {
+        background-color: white;
+        color: black;
+    }
+
+    menu {
+        display: none;
+    }
+
+    span {
+        display: block;
+    }
+
     </style>
 </head>
 <body>
 <!--Para envelopar basta clicar Ctrl, Shift, P -->
 <header>
-    <span id="burger" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        <h1>Estudos</h1>
+
+        <span id="burger" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
         <menu id="itens">
-    
-            <h1>Estudos</h1>
             <ul>
                 <li><a href="index01.html">Estudo dos Guris</a></li>
             </ul>
