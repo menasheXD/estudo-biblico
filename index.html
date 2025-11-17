@@ -30,7 +30,6 @@
 
         header > h1 {
             padding: 10px;
-            
             text-align: center;
         }
 
@@ -85,7 +84,7 @@
         }
 
         article > p {
-            text-align: justify;
+            text-align: center;
             margin-bottom: 20px;
             text-indent: 20px;    
         }
@@ -163,6 +162,11 @@
             font-size: 16px;
         }
 
+        .botao {
+            background-color: black;
+            color: white;
+        }
+
         #sim {
             background-color: #007cad;
             color: white;
@@ -182,20 +186,36 @@
         text-align: center;
         padding: 10px;
         cursor: pointer;
-    }
+        }
 
-    #burger:hover {
-        background-color: white;
-        color: black;
-    }
+        #burger:hover {
+            background-color: white;
+            color: black;
+        }
 
-    menu {
-        display: none;
-    }
+        menu {
+            display: none;
+        }
 
-    span {
-        display: block;
-    }
+        span {
+            display: block;
+        }
+
+        @media screen and (min-width: 768px) {
+
+            #burger {
+                display: none;
+
+            }
+
+            menu {
+                display: block;
+            }
+
+            /*menu > ul > li {
+                display: inline-block;
+            } */
+        }
 
     </style>
 </head>
@@ -214,19 +234,21 @@
 
     <main>
         <article>
-            <h2>Estudos</h2>
-            <p>Os estudos foram tirados de estudos feitos por irmãos que se reunem em comunhão para falar como se deve seguir a Deus, como estar fazendo a vontade dele, como estar em comunhão com ele e assim segue...</p>
-            <p>Todos os estudos acima vão ser feitos por grupos de irmãos diferentes.</p>
+            <h2>Hinos</h2>
+            <p>Clique no botão abaixo</p>
+            <!-- Botão para abrir a janela -->
+            <button onclick="abrirJanela()" class="botao">Abrir Janela</button>
 
+            <!-- A janela personalizada -->
+            <div id="janela">
+            <div id="caixa">
+                <p>Você deseja ir para o site dos hinários em vez deste site para estudo?</p>
+                <button id="sim">Sim</button>
+                <button id="nao">Não</button>
+            </div>
+            </div>
         </article>
     </main>
-<div id="janela">
-  <div id="caixa">
-    <p>Você deseja ir para o site dos hinários em vez deste site para estudo?</p>
-    <button id="sim">Sim</button>
-    <button id="nao">Não</button>
-  </div>
-</div>
 
 
     <script>
@@ -238,36 +260,17 @@
             itens.style.display = 'block'
         }
     }
-    //jeito mais simples
-  /*// Mostra uma janelinha perguntando "Sim ou Não"
-  let resposta = confirm("Você deseja ir para o site dos hinários, em vez deste site para estudo?");
 
-  // Se o usuário clicar em OK (Sim)
-  if (resposta === true) {
-      // Redireciona para outra página do seu site
-      window.location.href = "https://hinarios.app/"; // coloque aqui o caminho da sua página
-  } 
-  // Se o usuário clicar em Cancelar (Não)
-  else {
-      // Continua normalmente
-      alert("Tudo bem! Você continua nesta página. 😄");
-  }*/
-
-  //jeito mais avançado
-
-  // Mostra a janela personalizada ao carregar a página
-  window.onload = function() {
+  function abrirJanela() {
     document.getElementById("janela").style.display = "flex";
   }
 
-  // Quando clicar em "Sim"
   document.getElementById("sim").onclick = function() {
-    window.location.href = "https://hinarios.app/"; // coloque o link do seu site aqui
+    window.location.href = "https://hinarios.app/"; // coloque o link da sua página
   }
 
-  // Quando clicar em "Não"
   document.getElementById("nao").onclick = function() {
-    document.getElementById("janela").style.display = "none"; // fecha a janela
+    document.getElementById("janela").style.display = "none";
   }
 
 </script>

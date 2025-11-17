@@ -1,54 +1,14 @@
 @charset "UTF-8";
 
-@media screen and (min-width: 578px) and (max-width: 768px) {
-
-    body {
-        background: url('eosguris-celular.png') center center no-repeat fixed;
-    }
-
-    header {
-        background-color: rgb(141, 141, 141);
-    }
-
-    header > h1 {
-        padding: 10px;
-        text-align: center;
-    }
+@media screen and (min-width: 768px) {
 
     #burger {
-        background-color: rgb(39, 39, 39);
-        color: white;
-        display: block;
-        text-align: center;
-        padding: 10px;
-        cursor: pointer;
-    }
+        display: none;
 
-    #burger:hover {
-        background-color: white;
-        color: black;
     }
 
     menu {
-        display: none;
-    }
-
-    span {
         display: block;
-    }
-
-    li > a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-        text-align: center;
-        background-color: rgb(85, 85, 85);
-        color: white;
-        border-top: 2px solid gray;
-    }
-
-    li > a:hover {
-        background-color: gray;
     }
 
 }
