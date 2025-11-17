@@ -1,6 +1,11 @@
 @charset "UTF-8";
 
 @media screen and (min-width: 578px) and (max-width: 768px) {
+
+    body {
+        background: url('eosguris-celular.png') center center no-repeat fixed;
+    }
+
     header {
         background-color: rgb(141, 141, 141);
     }
