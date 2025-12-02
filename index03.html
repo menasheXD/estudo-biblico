@@ -10,9 +10,15 @@
     <style>
         
         @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Germania+One&family=Rubik+Distressed&display=swap');
+
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
 
         body {
-            background-color: rgb(210, 255, 255);
+            background-color: rgb(181, 226, 226);
             font: italic 600 1em 'Work Sans', sans-serif;
             text-align: center;
         }
@@ -23,81 +29,7 @@
         }
 
         a {
-            color: rgb(0, 110, 77);
-            text-decoration: none;
-            font-weight: bold;
-            
-        }
-
-        #Div {
             display: block;
-            background-color: rgb(106, 218, 255);
-            border: 1px 1px  black;
-            padding: 45px;
-            margin-bottom: 15px;
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 15px;
-            text-align: center;
-            font-weight: bolder;
-            text-decoration: none;
-            border-radius: 7.5px;
-        }
-
-        #Div2 {
-            display: block;
-            background-color: rgb(106, 218, 255);
-            border: 1px 1px  black;
-            padding: 45px;
-            margin-bottom: 15px;
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 15px;
-            text-align: center;
-            font-weight: bolder;
-            text-decoration: none;
-            border-radius: 7.5px;
-        }
-
-        #Div3 {
-            display: block;
-            background-color: rgb(106, 218, 255);
-            border: 1px 1px  black;
-            padding: 45px;
-            margin-bottom: 15px;
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 10px;
-            text-align: center;
-            font-weight: bolder;
-            text-decoration: none;
-            border-radius: 7.5px;
-        }
-
-        a#Div:hover {
-            background-color: rgb(108, 255, 255);
-            border: 2px 2px solid black;
-        }
-
-        a#Div2:hover {
-            background-color: rgb(108, 255, 255);
-        }
-
-        a#Div3:hover {
-            background-color: rgb(108, 255, 255);
-        }
-        
-        a:visited { 
-            color: rgb(0, 0, 172);
-        }
-
-        a:hover {
-            color: rgb(3, 97, 141);
-            text-decoration: underline;
-        }
-
-        a:active {
-            color: rgb(140, 0, 255);
         }
 
         a::after {
@@ -107,25 +39,113 @@
         }
 
         iframe#tela {
-            width: 95vw;
-            height: 400px;
+            width: 70vw;
+            height: 1000px;
+            border-bottom: 10px;
+        }
+
+        /* Configurações para o menu*/
+
+        header {
+            background-image: linear-gradient(rgb(60, 129, 218), rgb(14, 227, 255)) ;
+            min-height: 150px;
+            font-weight: normal;
+            text-align: center;
+            padding-top : 30px;
+            
+        }
+
+        header > h1 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        header > p {
+            font-family: 'Work Sans', sans-serif;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2em;
+            max-width: 600px;
+            padding-right: 10px;
+            padding-left: 10px;
+            margin: auto;
+            padding-bottom: 45px;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+
+        }
+
+        nav {
+            background-color: rgb(48, 125, 148);
+            padding: 10px;
+            box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        nav > a {
+            color: white;
+            text-decoration: none;
+            font: italic 600 1em 'Work Sans', sans-serif;
+            border-radius: 5px;
+            font-weight: bolder;
+            padding: 10px;
+            display: inline-block;
+            transition-duration: .5s;/*vai colorindo até chegar na cor cor desejada*/
+        }
+
+        nav > a:hover {
+            background-color: rgb(0, 128, 96);
+            color: wheat;
+        }
+
+        #perguntas {
+            background-color: rgb(41, 88, 88);
+            border-radius: 4px;
+           
+        }
+
+        div#perguntas > a {
+            color: white;
+            text-decoration: none;
+            font: italic bold 1em 'Work Sans', sans-serif;
+            padding: 5px;
+            transition-duration: .5s;/*vai colorindo até chegar na cor cor desejada*/
+        }
+
+        div > a:hover {
+            background-color: rgb(0, 128, 96);
+            color: wheat;
         }
 
     </style>
 
 </head>
 <body>
-    <div><a href="index02.html" target="frame" id="Div">1.Por que o Senhor Jesus morreu na cruz? Qual o objetivo?</a></div>
-    <div><a href="index04.html" target="frame" id="Div2">2.O que Ele efetuou com sua obra e seu sangue por nós?</a></div>
-    <div><a href="index05.html" target="frame" id="Div3">3.Como agora devemos andar e viver neste mundo como cristãos?</a></div>
-    <p><a href="index.html">Voltar para a página inicial.</a></p>
-    <p><a href="index01.html">Voltar para a página anterior.</a></p>
-    <p class="copy">&copy;IrmãosemCristo</p>
+    <header>
+        <h1>Obra que Cristo efetuou na cruz!</h1>
+        <p>O que ele fez por nós</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <!--<a href="#">Notícias</a>
+        <a href="#">Contato </a> -->
+        <div id="perguntas">
+            <a href="index02.html" target="frame">1.Por que o Senhor Jesus morreu na cruz? Qual o objetivo?</a>
+            <a href="index04.html" target="frame">2.O que Ele efetuou com sua obra e seu sangue por nós?</a>
+            <a href="index05.html" target="frame">3.Como agora devemos andar e viver neste mundo como cristãos?</a>
+        </div>
+    </nav>
+
+
+
+    
 
     <iframe id="tela" name="frame" frameborder="0" srcdoc="<h1>Escolha uma das opções acima</h1>">
         <p>Infelizmente seu navegador não é compatível com isso.</p>
     </iframe>
 
+    <p><a href="index01.html">Voltar para a página anterior.</a></p>
+        <p class="copy">&copy;IrmãosemCristo</p>
 
 </body>
 </html>

@@ -11,6 +11,7 @@
         
         @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Germania+One&family=Rubik+Distressed&display=swap');
 
         * {
             margin: 0px;
@@ -18,25 +19,11 @@
         }
 
         body {
-            background-color: rgb(254, 255, 207);
+            background-color: rgb(253, 255, 149);
             font: italic 600 1em 'Work Sans', sans-serif;
             text-align: center;
         }
 
-        /*div {
-            display: inline-block;
-            background-color: rgb(245, 255, 98);
-            border: 1px solid black;
-            text-align: center;
-            height: 300px;/* Altura 
-            width: 300px;/* Largura 
-            border-radius: 10px;
-
-        }
-
-        div:hover {
-            background-color: rgb(255, 166, 0);
-        }*/
 
         .copy {
             text-decoration: underline;
@@ -44,81 +31,7 @@
         }
 
         a {
-            color: rgb(0, 110, 77);
-            text-decoration: none;
-            font-weight: bold;
-            
-        }
-
-        #Div {
             display: block;
-            background-color: rgb(255, 187, 60);
-            border: 1px 1px  black;
-            padding: 45px;
-            margin-bottom: 15px;
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 15px;
-            text-align: center;
-            font-weight: bolder;
-            text-decoration: none;
-            border-radius: 7.5px;
-        }
-
-        #Div2 {
-            display: block;
-            background-color: rgb(255, 187, 60);
-            border: 1px 1px  black;
-            padding: 45px;
-            margin-bottom: 15px;
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 15px;
-            text-align: center;
-            font-weight: bolder;
-            text-decoration: none;
-            border-radius: 7.5px;
-        }
-
-        #Div3 {
-            display: block;
-            background-color: rgb(255, 187, 60);
-            border: 1px 1px  black;
-            padding: 45px;
-            margin-bottom: 15px;
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 10px;
-            text-align: center;
-            font-weight: bolder;
-            text-decoration: none;
-            border-radius: 7.5px;
-        }
-
-        a#Div:hover {
-            background-color: rgb(253, 211, 73);
-            border: 2px 2px solid black;
-        }
-
-        a#Div2:hover {
-            background-color: rgb(247, 206, 73);
-        }
-
-        a#Div3:hover {
-            background-color: rgb(247, 206, 73);
-        }
-        
-        a:visited { 
-            color: rgb(0, 0, 172);
-        }
-
-        a:hover {
-            color: rgb(0, 166, 243);
-            text-decoration: underline;
-        }
-
-        a:active {
-            color: rgb(140, 0, 255);
         }
 
         a::after {
@@ -127,24 +40,112 @@
             color: rgb(153, 153, 153);
         }
         iframe#tela {
-            width: 95vw;
-            height: 400px;
+            width: 70vw;
+            height: 1000px;
+            border-bottom: 10px;
+        }
+
+        /* Configurações para o menu*/
+
+        header {
+            background-image: linear-gradient(rgb(160, 149, 0), rgb(240, 217, 16)) ;
+            min-height: 150px;
+            font-weight: normal;
+            text-align: center;
+            padding-top : 30px;
+            
+        }
+
+        header > h1 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        header > p {
+            font-family: 'Work Sans', sans-serif;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2em;
+            max-width: 600px;
+            padding-right: 10px;
+            padding-left: 10px;
+            margin: auto;
+            padding-bottom: 45px;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+
+        }
+
+        nav {
+            background-color: rgb(209, 137, 4);
+            padding: 10px;
+            box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        nav > a {
+            color: white;
+            text-decoration: none;
+            font: italic 600 1em 'Work Sans', sans-serif;
+            border-radius: 5px;
+            font-weight: bolder;
+            padding: 10px;
+            display: inline-block;
+            transition-duration: .5s;/*vai colorindo até chegar na cor cor desejada*/
+        }
+
+        nav > a:hover {
+            background-color: rgb(158, 116, 0);
+            color: wheat;
+        }
+
+        #perguntas {
+            background-color: rgb(158, 116, 0);
+            border-radius: 4px;
+           
+        }
+
+        div#perguntas > a {
+            color: white;
+            text-decoration: none;
+            font: italic bold 1em 'Work Sans', sans-serif;
+            padding: 5px;
+            transition-duration: .5s;/*vai colorindo até chegar na cor cor desejada*/
+        }
+
+        div > a:hover {
+            background-color: rgb(0, 128, 96);
+            color: wheat;
         }
 
     </style>
 
 </head>
 <body>
-    <div><a href="index07.html" target="frame" id="Div">1.O que eu faço para ter conhecimento da palavra de Deus?</a></div>
-    <div><a href="index08.html" target="frame" id="Div2">2.Por que é importante o conhecimento sobre a palavra de Deus?</a></div>
-    <div><a href="index09.html" target="frame" id="Div3">3.E tendo o conhecimento da palavra de Deus, como será a minha conduta neste mundo em trevas?</a></div>
-    <p><a href="index.html">Voltar para a página inicial.</a></p>
-    <p><a href="index01.html">Voltar para a página anterior.</a></p>
-    <p class="copy">&copy;IrmãosemCristo</p>
+
+        <header>
+        <h1>A importância do conhecimento da palavra de Deus!</h1>
+        <p>E como conhecê-la se aprocimando do Pai</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <!--<a href="#">Notícias</a>
+        <a href="#">Contato </a> -->
+        <div id="perguntas">
+            <a href="index07.html" target="frame">1.O que eu faço para ter conhecimento da palavra de Deus?</a>
+            <a href="index08.html" target="frame">2.Por que é importante o conhecimento sobre a palavra de Deus?</a>
+            <a href="index09.html" target="frame">3.E tendo o conhecimento da palavra de Deus, como será a minha conduta neste mundo em trevas?</a>
+        </div>
+    </nav>
+
+
 
     <iframe id="tela" name="frame" frameborder="0" srcdoc="<h1>Escolha uma das opções acima</h1>">
         <p>Infelizmente seu navegador não é compatível com isso.</p>
     </iframe>
+
+        <p><a href="index01.html">Voltar para a página anterior.</a></p>
+        <p class="copy">&copy;IrmãosemCristo</p>
 </body>
 </html>
 
