@@ -101,6 +101,10 @@
         #perguntas {
             background-color: rgb(41, 88, 88);
             border-radius: 4px;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
            
         }
 
@@ -109,7 +113,8 @@
             text-decoration: none;
             font: italic bold 1em 'Work Sans', sans-serif;
             padding: 5px;
-            transition-duration: .5s;/*vai colorindo até chegar na cor cor desejada*/
+            transition-duration: .7s;/*vai colorindo até chegar na cor cor desejada*/
+
         }
 
         div > a:hover {
@@ -117,7 +122,7 @@
             color: wheat;
         }
 
-        @media screen and (min-width: 420px) and (max-width: 768px){
+        @media screen and (min-width: 420px) and (max-width: 600px){
             iframe#tela {
             width: 100vw;
             height: 100vh;
