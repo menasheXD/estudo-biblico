@@ -27,7 +27,7 @@
     h2 {
         text-shadow: 2px 2px 1px rgb(150, 150, 150); 
         text-decoration: underline;
-        font-family: "Kings", cursive;
+        font-family: "UnifrakturCook", cursive;
         font-weight: 700;
         font-style: normal;
             
@@ -42,7 +42,7 @@
         }
 
     p {
-        font-family: "Marck Script", cursive;
+        font-family: "Germania One", system-ui;
         font-weight: 400;
         font-style: normal;
         font-size: 1.2em;
