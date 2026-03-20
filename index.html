@@ -22,10 +22,22 @@
             background-color: rgb(188, 248, 248);
             font: italic 600 1em 'Work Sans', sans-serif;
             text-align: center;
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            grid-template: 100px 1fr 40px / 150px 1fr 1fr;
+            text-align: center;
+            justify-content: center;
+            align-content: space-around;
+        }
+
+        .cabecalho {
+            grid-area: 1 / 2 / 2 / 4;
         }
 
         header {
             background-color: rgb(64, 122, 177);
+
         }
 
         header > h1 {
@@ -39,7 +51,7 @@
         }
 
         h1 {
-            color: white;
+            color: rgb(255, 255, 255);
             padding-top: 20px;
             padding-bottom: 15px;
             text-shadow: 2px 2px 1px rgb(150, 150, 150); 
@@ -51,33 +63,21 @@
             text-decoration: underline;
         }
 
-        li > a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            text-align: center;
-            background-color: rgb(44, 64, 129);
-            color: white;
-            border-top: 2px solid rgba(84, 158, 226, 0.678);
+        .main {
+            background-color: powderblue;
+            grid-area: 1 / 1 / -1 / 2;
         }
 
-        li > a:hover {
-            background-color: rgb(56, 73, 150);
-            color: white;
+         p {
+            font-family: 'Work Sans', sans-serif;
+            font-weight: bold;
+            color: rgb(0, 54, 112);
+            font-size: 1.4em;
+            padding-top: 10px;
         }
-
 
         menu > ul {
             list-style-type: none;
-        }
-
-        main {
-            width: 90vw;
-            background-color: white;
-            margin: auto;
-            margin-top: 10px;
-            padding: 10px;
-            border-radius: 10px;
         }
 
         article > h2 {
@@ -92,9 +92,12 @@
         }
 
         a {
+
+            background-color: rgb(195, 248, 251);
             color: rgb(0, 110, 77);
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.1em;
         }
         
         a:visited { 
@@ -114,6 +117,17 @@
             text-decoration: none;
             font-weight: normal;
             color: rgb(153, 153, 153);
+        }
+
+        .secundario {
+            background-color: rgb(222, 251, 255);
+            grid-area: 2/3/3/-1;
+        }
+            .copy {
+                color: rgb(0, 54, 112);
+                font-family: 'Work Sans', sans-serif;
+                font-weight: bold;
+                font-size: 1.2em;
         }
 
         div {
@@ -222,19 +236,27 @@
 </head>
 <body>
 <!--Para envelopar basta clicar Ctrl, Shift, P -->
-<header>
-        <h1>Estudos</h1>
 
+
+    <header class="cabecalho">
+        <h1>Estudos</h1>
+    </header>
+
+    <nav class="main">
         <span id="burger" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
         <menu id="itens">
-            <ul>
-                <li><a href="index01.html">Estudo dos Guris</a></li>
-            </ul>
-        </menu>
-</header>
+            <p>Menu</p>
+            <hr>
+            <a href="index01.html">Estudo dos Guris</a>
 
-    <main>
-        <article>
+        </menu>
+    </nav>
+
+    <footer class="rodape">
+        <p class="copy">&copy;IrmãosemCristo</p>
+    </footer>
+
+        <div class="secundario">
             <h2>Hinos</h2>
             <p>Clique no botão abaixo</p>
             <!-- Botão para abrir a janela -->
@@ -246,12 +268,7 @@
                 <p>Você deseja ir para o site dos hinários em vez deste site para estudo?</p>
                 <button id="sim">Sim</button>
                 <button id="nao">Não</button>
-            </div>
-            </div>
-        </article>
-    </main>
-
-
+        </div>
     <script>
 
     function clickMenu() {
@@ -277,6 +294,6 @@
 </script>
         
     
-    <p class="copy">&copy;IrmãosemCristo</p>
+
 </body>
 </html>
