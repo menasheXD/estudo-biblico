@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Versículo do Dia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-pale: #F5E9C8;
+      --ink: #1C1410;
+      --parchment: #F9F3E8;
+      --parchment-dark: #EDE3CE;
+      --brown: #4A3728;
+      --brown-light: #7A6050;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--parchment);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+    }
+
+    /* Fundo com textura de pergaminho */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse at 20% 30%, rgba(201,168,76,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(74,55,40,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      max-width: 640px;
+      width: 100%;
+      background: var(--parchment);
+      border: 1px solid var(--parchment-dark);
+      border-radius: 2px;
+      padding: 3rem 3.5rem;
+      box-shadow:
+        0 2px 4px rgba(74,55,40,0.08),
+        0 8px 32px rgba(74,55,40,0.12),
+        inset 0 0 60px rgba(201,168,76,0.04);
+      animation: fadeIn 1.2s ease both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Bordas decorativas nos cantos */
+    .card::before, .card::after {
+      content: '';
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      border-color: var(--gold);
+      border-style: solid;
+    }
+    .card::before {
+      top: 14px; left: 14px;
+      border-width: 1.5px 0 0 1.5px;
+    }
+    .card::after {
+      bottom: 14px; right: 14px;
+      border-width: 0 1.5px 1.5px 0;
+    }
+
+    /* Cantos extras via pseudo-elements no wrapper */
+    .corner-tr, .corner-bl {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      border-color: var(--gold);
+      border-style: solid;
+    }
+    .corner-tr { top: 14px; right: 14px; border-width: 1.5px 1.5px 0 0; }
+    .corner-bl { bottom: 14px; left: 14px; border-width: 0 0 1.5px 1.5px; }
+
+    /* Header: dia e data */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      animation: fadeIn 1s 0.2s ease both;
+    }
+
+    .day-badge {
+      font-family: 'Crimson Pro', serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: transparent;
+      border: 1px solid var(--gold-pale);
+      padding: 4px 12px;
+      border-radius: 1px;
+    }
+
+    .date-text {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--brown-light);
+      font-style: italic;
+    }
+
+    /* Divisor ornamental */
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.8rem;
+      animation: fadeIn 1s 0.3s ease both;
+    }
+    .ornament-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-pale), var(--gold), var(--gold-pale), transparent);
+    }
+    .ornament-symbol {
+      font-size: 18px;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    /* O versículo */
+    .verse {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.35rem, 3vw, 1.7rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.65;
+      margin-bottom: 1.8rem;
+      text-align: center;
+      animation: fadeIn 1s 0.5s ease both;
+    }
+
+    /* Abertura de aspas decorativa */
+    .verse::before {
+      content: '\201C';
+      font-size: 4rem;
+      color: var(--gold-pale);
+      line-height: 0;
+      vertical-align: -0.6em;
+      margin-right: 0.1em;
+      font-style: normal;
+    }
+
+    .ornament-bottom {
+      margin-bottom: 1.5rem;
+      animation: fadeIn 1s 0.65s ease both;
+    }
+
+    /* Referência bíblica */
+    .reference {
+      text-align: center;
+      animation: fadeIn 1s 0.75s ease both;
+    }
+
+    .ref-book {
+      font-family: 'Crimson Pro', serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    .ref-chapter {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-left: 0.4em;
+    }
+
+    /* Botão de novo versículo */
+    .btn-refresh {
+      display: block;
+      margin: 2rem auto 0;
+      background: none;
+      border: 1px solid var(--gold-pale);
+      color: var(--brown-light);
+      font-family: 'Crimson Pro', serif;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      cursor: pointer;
+      border-radius: 1px;
+      transition: all 0.3s ease;
+      animation: fadeIn 1s 0.9s ease both;
+    }
+    .btn-refresh:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201,168,76,0.04);
+    }
+
+    @media (max-width: 500px) {
+      .card { padding: 2.5rem 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="corner-tr"></div>
+  <div class="corner-bl"></div>
+
+  <div class="header">
+    <span class="day-badge">Versículo do dia</span>
+    <span class="date-text" id="date-label"></span>
+  </div>
+
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <div class="ornament-symbol">✦</div>
+    <div class="ornament-line"></div>
+  </div>
+
+  <p class="verse" id="verse-text"></p>
+
+  <div class="ornament ornament-bottom">
+    <div class="ornament-line"></div>
+    <div class="ornament-symbol">✦</div>
+    <div class="ornament-line"></div>
+  </div>
+
+  <div class="reference">
+    <span class="ref-book" id="ref-book"></span>
+    <span class="ref-chapter" id="ref-chapter"></span>
+  </div>
+
+  <button class="btn-refresh" onclick="showRandom()">↻ Outro versículo</button>
+</div>
+
+<script>
+  // Lista de versículos — adicione quantos quiser!
+  const versiculos = [
+    { texto: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.", livro: "João", cap: "3:16" },
+    { texto: "O Senhor é o meu pastor e nada me faltará.", livro: "Salmos", cap: "23:1" },
+    { texto: "Tudo posso naquele que me fortalece.", livro: "Filipenses", cap: "4:13" },
+    { texto: "Confia no Senhor de todo o seu coração e não se apóie em seu próprio entendimento.", livro: "Provérbios", cap: "3:5" },
+    { texto: "Não andareis com medo, porque o Senhor, vosso Deus, vai convosco; não vos deixará, nem vos abandonará.", livro: "Deuteronômio", cap: "31:6" },
+    { texto: "Sede fortes e corajosos. Não temais, nem vos assusteis com eles, porque o Senhor, teu Deus, vai contigo.", livro: "Deuteronômio", cap: "31:6" },
+    { texto: "O Senhor é a minha luz e a minha salvação; a quem temerei?", livro: "Salmos", cap: "27:1" },
+    { texto: "Aquele que habita no esconderijo do Altíssimo, e descansa à sombra do Onipotente, dirá ao Senhor: Ele é o meu Deus, em quem confio.", livro: "Salmos", cap: "91:1-2" },
+    { texto: "Buscai primeiro o reino de Deus e a sua justiça, e todas estas coisas vos serão acrescentadas.", livro: "Mateus", cap: "6:33" },
+    { texto: "Eu sou o caminho, a verdade e a vida; ninguém vem ao Pai senão por mim.", livro: "João", cap: "14:6" },
+    { texto: "A fé é a certeza daquilo que esperamos e a prova das coisas que não vemos.", livro: "Hebreus", cap: "11:1" },
+    { texto: "Alegrai-vos sempre no Senhor! Novamente digo: alegrai-vos!", livro: "Filipenses", cap: "4:4" },
+    { texto: "O amor é paciente, é bondoso; o amor não é ciumento, não se vangloria, não se ensoberbece.", livro: "1 Coríntios", cap: "13:4" },
+    { texto: "Não vos conformeis com este século, mas transformai-vos pela renovação da vossa mente.", livro: "Romanos", cap: "12:2" },
+    { texto: "Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós.", livro: "1 Pedro", cap: "5:7" },
+    { texto: "Mas os que esperam no Senhor renovarão as suas forças; subirão com asas como águias.", livro: "Isaías", cap: "40:31" },
+    { texto: "Antes de eu te formar no ventre materno, eu te conheci; antes que saísses da madre, eu te consagrei.", livro: "Jeremias", cap: "1:5" },
+    { texto: "Porque sou eu que conheço os planos que tenho para vocês, planos de fazê-los prosperar e não de causar dano, planos de dar a vocês esperança e um futuro.", livro: "Jeremias", cap: "29:11" },
+    { texto: "Deus é o nosso refúgio e fortaleza, socorro bem presente nas tribulações.", livro: "Salmos", cap: "46:1" },
+    { texto: "Eu vim para que tenham vida e a tenham em abundância.", livro: "João", cap: "10:10" },
+    { texto: "Posso enfrentar tudo isso por meio daquele que me dá forças.", livro: "Filipenses", cap: "4:13" },
+    { texto: "Sede bondosos uns para com os outros, compassivos, perdoando-vos mutuamente, assim como Deus vos perdoou em Cristo.", livro: "Efésios", cap: "4:32" },
+    { texto: "O Senhor abençoe você e o guarde; o Senhor faça resplandecer o seu rosto sobre você e lhe conceda graça.", livro: "Números", cap: "6:24-25" },
+    { texto: "Porque onde dois ou três estiverem reunidos em meu nome, ali eu estou no meio deles.", livro: "Mateus", cap: "18:20" },
+    { texto: "Vinde a mim, todos os que estais cansados e sobrecarregados, e eu vos aliviarei.", livro: "Mateus", cap: "11:28" },
+    { texto: "O Senhor é fiel; ele fortalecerá vocês e os protegerá do maligno.", livro: "2 Tessalonicenses", cap: "3:3" },
+    { texto: "Não vos preocupeis com nada, mas em tudo, pela oração e pela súplica, com ação de graças, apresentai os vossos pedidos a Deus.", livro: "Filipenses", cap: "4:6" },
+    { texto: "Porque o Senhor seu Deus está no meio de vocês, guerreiro poderoso que salva.", livro: "Sofonias", cap: "3:17" },
+    { texto: "Eu te fortaleço e te ajudo; eu te sustento com a minha destra vitoriosa.", livro: "Isaías", cap: "41:10" },
+    { texto: "Este é o dia que o Senhor fez; regozijemo-nos e alegremo-nos nele.", livro: "Salmos", cap: "118:24" },
+  ];
+
+  // Seleciona versículo do dia com base na data (determinístico)
+  function getVersiculo() {
+    const hoje = new Date();
+    const inicio = new Date(hoje.getFullYear(), 0, 0);
+    const diff = hoje - inicio;
+    const umDia = 1000 * 60 * 60 * 24;
+    const diaDoAno = Math.floor(diff / umDia);
+    return versiculos[diaDoAno % versiculos.length];
+  }
+
+  // Exibir um versículo aleatório (botão)
+  let ultimoIdx = -1;
+  function showRandom() {
+    let idx;
+    do { idx = Math.floor(Math.random() * versiculos.length); } while (idx === ultimoIdx);
+    ultimoIdx = idx;
+    renderVerse(versiculos[idx]);
+  }
+
+  function renderVerse(v) {
+    const el = document.getElementById('verse-text');
+    el.style.opacity = 0;
+    setTimeout(() => {
+      el.textContent = v.texto;
+      document.getElementById('ref-book').textContent = v.livro;
+      document.getElementById('ref-chapter').textContent = v.cap;
+      el.style.transition = 'opacity 0.6s ease';
+      el.style.opacity = 1;
+    }, 300);
+  }
+
+  // Data formatada em português
+  function formatDate() {
+    const d = new Date();
+    return d.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
+  }
+
+  // Inicializar
+  document.getElementById('date-label').textContent = formatDate();
+  renderVerse(getVersiculo());
+  ultimoIdx = versiculos.indexOf(getVersiculo());
+</script>
+</body>
+</html>
