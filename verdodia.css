@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-pale: #F5E9C8;
+      --ink: #1C1410;
+      --parchment: #F9F3E8;
+      --parchment-dark: #EDE3CE;
+      --brown: #4A3728;
+      --brown-light: #7A6050;
+    }
+
+    .card {
+      position: relative;
+      max-width: 640px;
+      width: 100%;
+      background: var(--parchment);
+      border: 1px solid var(--parchment-dark);
+      border-radius: 2px;
+      padding: 3rem 3.5rem;
+      box-shadow:
+        0 2px 4px rgba(74,55,40,0.08),
+        0 8px 32px rgba(74,55,40,0.12),
+        inset 0 0 60px rgba(201,168,76,0.04);
+      animation: fadeIn 1.2s ease both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Bordas decorativas nos cantos */
+    .card::before, .card::after {
+      content: '';
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      border-color: var(--gold);
+      border-style: solid;
+    }
+    .card::before {
+      top: 14px; left: 14px;
+      border-width: 1.5px 0 0 1.5px;
+    }
+    .card::after {
+      bottom: 14px; right: 14px;
+      border-width: 0 1.5px 1.5px 0;
+    }
+
+    /* Cantos extras via pseudo-elements no wrapper */
+    .corner-tr, .corner-bl {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      border-color: var(--gold);
+      border-style: solid;
+    }
+    .corner-tr { top: 14px; right: 14px; border-width: 1.5px 1.5px 0 0; }
+    .corner-bl { bottom: 14px; left: 14px; border-width: 0 0 1.5px 1.5px; }
+
+    /* Header: dia e data */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      animation: fadeIn 1s 0.2s ease both;
+    }
+
+    .day-badge {
+      font-family: 'Crimson Pro', serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: transparent;
+      border: 1px solid var(--gold-pale);
+      padding: 4px 12px;
+      border-radius: 1px;
+    }
+
+    .date-text {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--brown-light);
+      font-style: italic;
+    }
+
+    /* Divisor ornamental */
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.8rem;
+      animation: fadeIn 1s 0.3s ease both;
+    }
+    .ornament-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-pale), var(--gold), var(--gold-pale), transparent);
+    }
+    .ornament-symbol {
+      font-size: 18px;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    /* O versículo */
+    .verse {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.35rem, 3vw, 1.7rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.65;
+      margin-bottom: 1.8rem;
+      text-align: center;
+      animation: fadeIn 1s 0.5s ease both;
+    }
+
+    /* Abertura de aspas decorativa */
+    .verse::before {
+      content: '\201C';
+      font-size: 4rem;
+      color: var(--gold-pale);
+      line-height: 0;
+      vertical-align: -0.6em;
+      margin-right: 0.1em;
+      font-style: normal;
+    }
+
+    .ornament-bottom {
+      margin-bottom: 1.5rem;
+      animation: fadeIn 1s 0.65s ease both;
+    }
+
+    /* Referência bíblica */
+    .reference {
+      text-align: center;
+      animation: fadeIn 1s 0.75s ease both;
+    }
+
+    .ref-book {
+      font-family: 'Crimson Pro', serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brown-light);
+    }
+
+    .ref-chapter {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-left: 0.4em;
+    }
+
+    /* Botão de novo versículo */
+    .btn-refresh {
+      display: block;
+      margin: 2rem auto 0;
+      background: none;
+      border: 1px solid var(--gold-pale);
+      color: var(--brown-light);
+      font-family: 'Crimson Pro', serif;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      cursor: pointer;
+      border-radius: 1px;
+      transition: all 0.3s ease;
+      animation: fadeIn 1s 0.9s ease both;
+    }
+    .btn-refresh:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201,168,76,0.04);
+    }
+
+    @media (max-width: 500px) {
+      .card { padding: 2.5rem 1.8rem; }
+    }
